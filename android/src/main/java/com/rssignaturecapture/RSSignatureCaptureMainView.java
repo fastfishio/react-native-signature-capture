@@ -15,6 +15,7 @@ import java.io.FileOutputStream;
 import java.io.ByteArrayOutputStream;
 
 import android.util.Base64;
+import java.util.UUID;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -153,12 +154,12 @@ public class RSSignatureCaptureMainView extends LinearLayout implements OnClickL
       myDir.mkdirs();
     }
 
-    // set the file name of your choice
-    String fname = "signature.png";
+    // set the file name
+    String fname = "signature-" + UUID.randomUUID().toString() + ".png";
 
     // in our case, we delete the previous file, you can remove this
     File file = new File(myDir, fname);
-    if (file.exists() || file.getAbsoluteFile().exists()) {
+    if (file.exists()) {
       file.delete();
     }
 
