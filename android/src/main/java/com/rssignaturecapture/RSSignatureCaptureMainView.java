@@ -158,7 +158,7 @@ public class RSSignatureCaptureMainView extends LinearLayout implements OnClickL
 
     // in our case, we delete the previous file, you can remove this
     File file = new File(myDir, fname);
-    if (file.exists()) {
+    if (file.exists() || file.getAbsoluteFile().exists()) {
       file.delete();
     }
 
